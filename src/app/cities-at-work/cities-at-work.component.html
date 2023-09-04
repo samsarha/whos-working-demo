@@ -1,8 +1,23 @@
-<ul>
-    <li *ngFor="let city of cities">
-        <h4>{{city.name}}</h4>
-        <p>{{city.currentTime}}</p>
-        <p>{{city.timezone}}</p> 
-        <p>{{city.country}}</p>
-    </li>
-</ul>
+
+<div class="container">
+
+    <ul class="city-overview">
+    
+        <li *ngFor="let city of cities">
+            <a [routerLink]="['/status', {name:city.name}]">
+                <div class="card">
+                    <h4>{{city.name}}</h4>
+                    <p>{{city.currentTime}}</p>
+                    <p>{{city.timezone}}</p> 
+                    <p>{{city.country}}</p>
+                </div>
+            </a>       
+        </li>
+    </ul>
+
+</div>
+
+
+
+
+
